@@ -1,8 +1,9 @@
-function Home() {
+import Banner from './components/banner.tsx'
 
+function Home() {
     return (
         <>
-            <h1 className="text-center text-amber-700">Home</h1>
+            <Banner />
         </>
     )
 }

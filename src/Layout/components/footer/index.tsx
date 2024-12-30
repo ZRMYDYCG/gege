@@ -68,11 +68,10 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* 底部版权信息 */}
-                <div className="bg-red-500 text-white text-center py-4 mt-8 w-full">
-                    <p>Copyright © 2006-2024. 鳙鳙食品 All Rights Reserved. 赣ICP备12005678号-1</p>
-                </div>
+            </div>
+            {/* 底部版权信息 */}
+            <div className="bg-red-500 text-white w-full text-center py-4 mt-8 w-full">
+                <p>Copyright © 2006-2024. 鳙鳙食品 All Rights Reserved. 赣ICP备12005678号-1</p>
             </div>
         </footer>
     );

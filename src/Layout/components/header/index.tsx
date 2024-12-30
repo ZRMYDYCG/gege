@@ -15,7 +15,7 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center h-[100px] px-4">
                 {/* Logo 部分 */}
                 <div className="flex items-center">
-                    <img src={logo} alt="Logo" className="h-full" />
+                    <img src={logo} alt="Logo" className="h-full relative z-10" />
                 </div>
                 {/* 移动端菜单按钮 */}
                 <div className="block lg:hidden" onClick={toggleMenu}>
