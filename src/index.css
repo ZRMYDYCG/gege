@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 自定义滚动条样式 */
+html {
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari 和 Opera */
+}
+
+/* 全局过渡效果 */
+* {
+    transition: all 0.3s ease; /* 所有元素进行过渡，持续时间 0.3 秒 */
+}
