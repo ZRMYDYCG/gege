@@ -5,7 +5,7 @@ import VrReact from 'vr-react';
 
 // 自定义 VR 组件
 const VRComponent = () => {
-    const [viewer, setViewer] = useState(null);
+    const [setViewer] = useState(null);
 
     // 定义场景
     const scenes = {
