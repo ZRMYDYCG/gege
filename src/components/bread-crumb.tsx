@@ -38,16 +38,17 @@ const Breadcrumbs: React.FC = () => {
 
     return (
         <nav
-            className="relative w-[100vw] rounded-md h-[240px] flex justify-between items-center"
+            className="relative w-[100vw] rounded-md h-[240px] flex flex-col justify-center items-center"
             style={{ backgroundImage: `url(${breadcrumbsPic})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
-            <ul className="flex list-none left-[50%] transform -translate-x-1/2 relative z-10"> {/* 将内容提升到最上层 */}
+            <div className="relative z-10 text-[35px] text-gray-500 font-[楷体] mb-3">{ breadcrumbs[breadcrumbs.length - 1].title }</div>
+            <ul className="flex list-none relative z-10"> {/* 将内容提升到最上层 */}
                 {breadcrumbs.map((breadcrumb, index) => (
                     <li key={index}>
-                        <Link to={breadcrumb.path} className="hover:text-orange-500">
+                        <Link to={breadcrumb.path} className="hover:text-orange-500 text-sm">
                             {breadcrumb.title}
                         </Link>
-                        {index < breadcrumbs.length - 1 && <span className="px-1">//</span>}
+                        {index < breadcrumbs.length - 1 && <span className="px-1 text-sm text-gray-400">//</span>}
                     </li>
                 ))}
             </ul>

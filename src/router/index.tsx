@@ -12,8 +12,8 @@ import NotFound from '../pages/notFound/404.tsx';
 export const routesConfig = [
     { path: 'home', element: <Home />, meta: { title: '首页' } },
     { path: 'about', element: <About />, meta: { title: '关于我们' } },
-    { path: 'factory', element: <Factory />, meta: { title: '工厂' } },
-    { path: 'job', element: <Job />, meta: { title: '职位' } },
+    { path: 'factory', element: <Factory />, meta: { title: '在线参观区' } },
+    { path: 'job', element: <Job />, meta: { title: '招聘' } },
     {
         path: 'new',
         element: <New />,
@@ -26,7 +26,7 @@ export const routesConfig = [
             },
         ],
     },
-    { path: 'product', element: <Product />, meta: { title: '产品' } },
+    { path: 'product', element: <Product />, meta: { title: '产品中心' } },
 ];
 
 const router = createBrowserRouter([
