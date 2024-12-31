@@ -6,15 +6,27 @@ import Factory from '../pages/factory';
 import Job from '../pages/job';
 import New from '../pages/new';
 import Product from '../pages/product';
+import Article from '../pages/new/children/article.tsx';
 import NotFound from '../pages/notFound/404.tsx';
 
 const routesConfig = [
-    { path: 'home', element: <Home /> },
-    { path: 'about', element: <About /> },
-    { path: 'factory', element: <Factory /> },
-    { path: 'job', element: <Job /> },
-    { path: 'new', element: <New /> },
-    { path: 'product', element: <Product /> },
+    { path: 'home', element: <Home />, meta: { title: '首页' } },
+    { path: 'about', element: <About />, meta: { title: '关于我们' } },
+    { path: 'factory', element: <Factory />, meta: { title: '工厂' } },
+    { path: 'job', element: <Job />, meta: { title: '职位' } },
+    {
+        path: 'new',
+        element: <New />,
+        meta: { title: '新闻' },
+        children: [
+            {
+                path: 'article',
+                element: <Article />,
+                meta: { title: '正文' },
+            },
+        ],
+    },
+    { path: 'product', element: <Product />, meta: { title: '产品' } },
 ];
 
 const router = createBrowserRouter([
@@ -29,6 +41,12 @@ const router = createBrowserRouter([
             ...routesConfig.map(route => ({
                 path: route.path,
                 element: route.element,
+                meta: route.meta,
+                children: route.children ? route.children.map(child => ({
+                    path: child.path,
+                    element: child.element,
+                    meta: child.meta, // 添加子路由的元信息
+                })) : [],
             })),
         ],
     },
