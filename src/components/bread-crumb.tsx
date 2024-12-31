@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { routesConfig } from '../router';
+import breadcrumbsPic from '../assets/breadcrubs.jpg';
 
 const Breadcrumbs: React.FC = () => {
     const location = useLocation();
@@ -36,14 +37,17 @@ const Breadcrumbs: React.FC = () => {
     const breadcrumbs = getBreadcrumbs();
 
     return (
-        <nav>
-            <ul style={{ display: 'flex', listStyleType: 'none' }}>
+        <nav
+            className="relative w-[100vw] rounded-md h-[240px] flex justify-between items-center"
+            style={{ backgroundImage: `url(${breadcrumbsPic})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
+            <ul className="flex list-none left-[50%] transform -translate-x-1/2 relative z-10"> {/* 将内容提升到最上层 */}
                 {breadcrumbs.map((breadcrumb, index) => (
                     <li key={index}>
-                        <Link to={breadcrumb.path}>
+                        <Link to={breadcrumb.path} className="hover:text-orange-500">
                             {breadcrumb.title}
                         </Link>
-                        {index < breadcrumbs.length - 1 && <span className="px-2">//</span>}
+                        {index < breadcrumbs.length - 1 && <span className="px-1">//</span>}
                     </li>
                 ))}
             </ul>
