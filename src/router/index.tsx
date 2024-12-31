@@ -9,7 +9,7 @@ import Product from '../pages/product';
 import Article from '../pages/new/children/article.tsx';
 import NotFound from '../pages/notFound/404.tsx';
 
-const routesConfig = [
+export const routesConfig = [
     { path: 'home', element: <Home />, meta: { title: '首页' } },
     { path: 'about', element: <About />, meta: { title: '关于我们' } },
     { path: 'factory', element: <Factory />, meta: { title: '工厂' } },
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
                 children: route.children ? route.children.map(child => ({
                     path: child.path,
                     element: child.element,
-                    meta: child.meta, // 添加子路由的元信息
+                    meta: child.meta,
                 })) : [],
             })),
         ],
